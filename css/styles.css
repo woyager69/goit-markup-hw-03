@@ -1,37 +1,55 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+
 :root {
   --primary-text-color: #757575;
+  --secondary-text-color: #000;
   --title-text-color: #212121;
   --address-text-color: rgba(255, 255, 255, 0.6);
   --accent-color: #2196f3;
-  --primary-white-color: #ffffff;
-  --primary-black-color: #000000;
+  --active-button-color: #188ce8;
+  --primary-background-color: #fff;
   --main-background-color: #f5f4fa;
   --footer-background-color: #2f303a;
 }
 body {
   font-family: Roboto, sans-serif;
-
-  background-color: white;
+  font-style: normal;
+  background-color: var(--primary-background-color);
+  max-width: 1600px;
 }
 
 /* header section */
-header {
-  background-color: #ffffff;
-}
-.header-logo {
+
+.logo {
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
-  line-height: 1.2;
+  line-height: 1.19;
   letter-spacing: 0.03em;
 
   color: var(--accent-color);
 }
-.header-logo .studio {
-  color: var(--primary-black-color);
+.logo .studio-header {
+  color: var(--secondary-text-color);
 }
-.site-link {
+.site-nav a {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -39,13 +57,16 @@ header {
 
   color: var(--title-text-color);
 }
-.site-link:hover {
+.site-nav a:hover,
+.site-nav a:focus,
+.contacts a:hover,
+.contacts a:focus,
+.site-nav .active,
+.address-contact:hover,
+.address-contact:focus {
   color: var(--accent-color);
 }
-.site-link:focus {
-  color: var(--accent-color);
-}
-.contacts-link {
+.contacts-header {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -53,12 +74,7 @@ header {
 
   color: var(--primary-text-color);
 }
-.contacts-link:hover {
-  color: var(--accent-color);
-}
-.contacts-link:focus {
-  color: var(--accent-color);
-}
+
 /* main sections*/
 .section-title {
   font-weight: bold;
@@ -85,31 +101,20 @@ button {
   letter-spacing: 0.03em;
   text-align: center;
 
+  border-radius: 4px;
+
   color: var(--title-text-color);
   background-color: var(--main-background-color);
 }
 
-button:hover {
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-}
+button:hover,
 button:focus {
-  color: var(--primary-white-color);
+  color: var(--primary-background-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.button.primary {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
 
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-}
-.button.secondary {
-  color: var(--primary-text-color);
-  background-color: var(--main-background-color);
-}
 /* hero section */
 .hero-section {
   background-color: var(--footer-background-color);
@@ -121,8 +126,24 @@ button:focus {
   letter-spacing: 0.06em;
   text-align: center;
 
-  color: var(--primary-white-color);
+  color: var(--primary-background-color);
 }
+.button.hero {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+}
+.button.hero:hover,
+.button.hero:focus {
+  background-color: var(--active-button-color);
+}
+
 /* advantages section */
 .advantage-title {
   font-weight: bold;
@@ -146,10 +167,7 @@ button:focus {
   background-color: var(--main-background-color);
 }
 .member-card {
-  width: 270px;
-  height: 368px;
-
-  background-color: var(--primary-white-color);
+  background-color: var(--primary-background-color);
 }
 .member-name {
   font-weight: 500;
@@ -187,21 +205,12 @@ button:focus {
   color: var(--primary-text-color);
 }
 /* footer section */
-footer {
+.page-footer {
   background-color: var(--footer-background-color);
 }
-.footer-logo {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
 
-  color: var(--accent-color);
-}
-.footer-logo .studio {
-  color: var(--primary-white-color);
+.logo .studio-footer {
+  color: white;
 }
 .address {
   font-style: normal;
@@ -210,7 +219,7 @@ footer {
   letter-spacing: 0.03em;
 }
 .address-link {
-  color: var(--primary-white-color);
+  color: white;
 }
 .address-contact {
   color: var(--address-text-color);

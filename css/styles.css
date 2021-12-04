@@ -1,9 +1,12 @@
+html {
+  box-sizing: border-box;
+}
 *,
 *::after,
 *::before {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 ul li {
   list-style: none;
@@ -14,6 +17,7 @@ a {
 button {
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }
 
 :root {
@@ -33,10 +37,30 @@ body {
   background-color: var(--primary-background-color);
   max-width: 1600px;
 }
+img {
+  display: block;
+}
+header {
+  border-bottom: 1px solid #ececec;
+}
+.section {
+  padding: 94px 0;
+}
+.section-examples {
+  padding-top: 2px;
+  padding-bottom: 94px;
+}
+
+.container {
+  padding: 0 15px;
+  width: 1200px;
+  margin: 0 auto;
+}
 
 /* header section */
 
-.logo {
+.header-logo,
+.footer-logo {
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
@@ -46,17 +70,50 @@ body {
 
   color: var(--accent-color);
 }
-.logo .studio-header {
+.header-logo {
+  padding: 24px 0 25px 0;
+  margin-right: 92px;
+}
+.header-logo-studio {
   color: var(--secondary-text-color);
 }
-.site-nav a {
+.site-nav a,
+.contacts a {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-
+  padding: 31px 0;
+}
+.site-nav a {
   color: var(--title-text-color);
 }
+.contacts a {
+  color: var(--primary-text-color);
+}
+.site-nav,
+.contacts {
+  padding-top: 31px;
+  padding-bottom: 31px;
+}
+.site-nav {
+  margin-right: 331px;
+}
+.site-nav li:not(:last-child),
+.contacts li:not(:last-child) {
+  margin-right: 50px;
+}
+
+header .container,
+.site-nav,
+.contacts,
+.advantages-list,
+.examples-images,
+.member-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
 .site-nav a:hover,
 .site-nav a:focus,
 .contacts a:hover,
@@ -66,14 +123,6 @@ body {
 .address-contact:focus {
   color: var(--accent-color);
 }
-.contacts-header {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-
-  color: var(--primary-text-color);
-}
 
 /* main sections*/
 .section-title {
@@ -82,6 +131,7 @@ body {
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 50px;
 
   color: var(--title-text-color);
 }
@@ -92,9 +142,17 @@ body {
   opacity: 0;
   margin-top: -1px;
 }
-/* buttons */
-button {
-  font-family: inherit;
+/* filter buttons */
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.filter li:not(:last-child) {
+  margin-right: 8px;
+}
+
+.filter-button {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -103,20 +161,44 @@ button {
 
   border-radius: 4px;
 
+  padding: 6px 22px;
+
   color: var(--title-text-color);
   background-color: var(--main-background-color);
 }
 
-button:hover,
-button:focus {
+.filter-button:hover,
+.filter-button:focus {
   color: var(--primary-background-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+}
+.preview li {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.preview li:nth-child(3n) {
+  margin-right: 0;
+}
+.preview li:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+.preview-title {
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
 /* hero section */
-.hero-section {
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
   background-color: var(--footer-background-color);
 }
 .hero-title {
@@ -128,28 +210,41 @@ button:focus {
 
   color: var(--primary-background-color);
 }
-.button.hero {
+.button-hero {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  border-radius: 4px;
+  padding: 10px 32px;
+
+  display: block;
+  margin: 30px auto 0 auto;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   color: var(--primary-background-color);
   background-color: var(--accent-color);
 }
-.button.hero:hover,
-.button.hero:focus {
+.button-hero:hover,
+.button-hero:focus {
   background-color: var(--active-button-color);
 }
 
 /* advantages section */
+.advantages-list {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 270px;
+}
+.advantages-list li:not(:last-child) {
+  margin-right: 30px;
+}
 .advantage-title {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
+  margin-bottom: 10px;
   text-transform: uppercase;
 
   color: var(--title-text-color);
@@ -167,13 +262,19 @@ button:focus {
   background-color: var(--main-background-color);
 }
 .member-card {
+  padding-bottom: 30px;
   background-color: var(--primary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .member-name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
   letter-spacing: 0.03em;
 
   color: var(--title-text-color);
@@ -194,6 +295,7 @@ button:focus {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  margin-bottom: 3px;
 
   color: var(--title-text-color);
 }
@@ -205,11 +307,16 @@ button:focus {
   color: var(--primary-text-color);
 }
 /* footer section */
-.page-footer {
+.footer-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--footer-background-color);
 }
-
-.logo .studio-footer {
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 22px;
+}
+.footer-logo-studio {
   color: white;
 }
 .address {
@@ -222,5 +329,7 @@ button:focus {
   color: white;
 }
 .address-contact {
+  display: inline-block;
+  margin-top: 6px;
   color: var(--address-text-color);
 }

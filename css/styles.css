@@ -47,7 +47,6 @@ header {
   padding: 94px 0;
 }
 .section-examples {
-  padding-top: 2px;
   padding-bottom: 94px;
 }
 
@@ -72,7 +71,7 @@ header {
 }
 .header-logo {
   padding: 24px 0 25px 0;
-  margin-right: 92px;
+  margin-right: 93px;
 }
 .header-logo-studio {
   color: var(--secondary-text-color);
@@ -83,7 +82,7 @@ header {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  padding: 31px 0;
+  padding: 32px 0;
 }
 .site-nav a {
   color: var(--title-text-color);
@@ -93,8 +92,8 @@ header {
 }
 .site-nav,
 .contacts {
-  padding-top: 31px;
-  padding-bottom: 31px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 .site-nav {
   margin-right: 331px;

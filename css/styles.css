@@ -233,7 +233,7 @@ header .container,
 /* advantages section */
 .advantages-list {
   display: grid;
-  grid-template-columns: 300px 300px 300px 270px;
+  grid-template-columns: 25.64% 25.64% 25.64% 23.08%;
 }
 .advantages-list li:not(:last-child) {
   margin-right: 30px;
